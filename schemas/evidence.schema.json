@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["performance_id", "action", "facts"],
+  "properties": {
+    "performance_id": {"type": "string"},
+    "action": {"type": "string"},
+    "facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["frame_range", "phase", "body_part", "metric", "value", "confidence"],
+        "properties": {
+          "frame_range": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0}},
+          "phase": {"type": "string"},
+          "body_part": {"type": "string"},
+          "metric": {"type": "string"},
+          "value": {"type": "number"},
+          "unit": {"type": "string"},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "source": {"type": "string"}
+        }
+      }
+    }
+  }
+}

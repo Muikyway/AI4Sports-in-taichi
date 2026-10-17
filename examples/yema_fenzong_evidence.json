@@ -1,0 +1,13 @@
+{
+  "performance_id": "YMZ-TEST-0001",
+  "action": "野马分鬃",
+  "video_id": "demo-yema-001",
+  "fps": 25,
+  "facts": [
+    {"frame_range": [45, 60], "phase": "第二阶段", "body_part": "Right_Knee", "metric": "joint_angle", "value": 118.0, "unit": "degree", "confidence": 0.93, "source": "alphapose-halpe26"},
+    {"frame_range": [45, 60], "phase": "第二阶段", "body_part": "Torso", "metric": "torso_tilt", "value": 21.0, "unit": "degree", "confidence": 0.89, "source": "kinematics-v1"},
+    {"frame_range": [45, 60], "phase": "第二阶段", "body_part": "Feet", "metric": "foot_distance_ratio", "value": 0.92, "unit": "body_height_ratio", "confidence": 0.91, "source": "kinematics-v1"},
+    {"frame_range": [45, 60], "phase": "第二阶段", "body_part": "Right_Wrist", "metric": "wrist_height_ratio", "value": 0.82, "unit": "shoulder_height_ratio", "confidence": 0.86, "source": "alphapose-halpe26"},
+    {"frame_range": [45, 60], "phase": "第二阶段", "body_part": "Phase", "metric": "phase_duration", "value": 16, "unit": "frame", "confidence": 0.94, "source": "phase-detector-v1"}
+  ]
+}

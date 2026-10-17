@@ -1,0 +1,23 @@
+{
+  "source_pose_json": "D:\\program\\test\\outputs\\TaiChi\\v_TaiChi_g01_c01\\alphapose-results.json",
+  "source_video": "D:\\program\\test\\TaiChi\\v_TaiChi_g01_c01.avi",
+  "motionbert_config": "D:\\program\\test\\MotionBERT\\configs\\pose3d\\MB_ft_h36m_global_lite.yaml",
+  "motionbert_checkpoint": "D:\\program\\test\\MotionBERT\\checkpoint\\best_epoch.bin",
+  "focus": null,
+  "input_records": 168,
+  "input_frames": 168,
+  "output_shape": [
+    168,
+    17,
+    3
+  ],
+  "fps": 25.0,
+  "video_size": [
+    320,
+    240
+  ],
+  "input_skeleton": "halpe-26",
+  "output_skeleton": "h36m-17",
+  "coordinate_system": "MotionBERT normalized coordinates",
+  "pixel_mode": false
+}

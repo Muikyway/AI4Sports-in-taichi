@@ -1,0 +1,26 @@
+{
+  "source_pose_json": "D:\\program\\test\\outputs\\TaiChi\\v_TaiChi_g19_c02\\alphapose-results.json",
+  "model_input_pose_json": "D:\\program\\test\\outputs\\TaiChi\\v_TaiChi_g19_c02\\motionbert_3d\\alphapose-primary-person.json",
+  "source_video": "D:\\program\\test\\TaiChi\\v_TaiChi_g19_c02.avi",
+  "motionbert_config": "D:\\program\\test\\MotionBERT\\configs\\pose3d\\MB_ft_h36m_global_lite.yaml",
+  "motionbert_checkpoint": "D:\\program\\test\\MotionBERT\\checkpoint\\best_epoch.bin",
+  "focus": null,
+  "primary_person": true,
+  "primary_selection_frames": 180,
+  "input_records": 180,
+  "input_frames": 180,
+  "output_shape": [
+    180,
+    17,
+    3
+  ],
+  "fps": 25.0,
+  "video_size": [
+    320,
+    240
+  ],
+  "input_skeleton": "halpe-26",
+  "output_skeleton": "h36m-17",
+  "coordinate_system": "MotionBERT normalized coordinates",
+  "pixel_mode": false
+}

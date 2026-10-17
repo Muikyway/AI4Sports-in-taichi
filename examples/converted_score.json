@@ -1,0 +1,121 @@
+{
+  "performance_id": "alphapose_halpe_sample",
+  "rubric": {
+    "id": "taichi-yema-fenzong-test-v1",
+    "name": "野马分鬃研究用测试规则",
+    "version": "1.0.0",
+    "base_score": 10.0,
+    "note": "仅用于验证规则执行、证据链和报告生成，不代表正式竞赛规程。"
+  },
+  "mode": "strict",
+  "base_score": 10.0,
+  "total_deduction": 2.5,
+  "final_score": 7.5,
+  "items": [
+    {
+      "rule_id": "YMZ-P2-KNEE-001",
+      "rule_name": "第二阶段右膝屈曲不足",
+      "status": "violation",
+      "violation": true,
+      "deduction": 1.0,
+      "review_required": false,
+      "evidence": {
+        "frame_range": [
+          0,
+          1
+        ],
+        "phase": "第二阶段",
+        "body_part": "Right_Knee",
+        "metric": "joint_angle",
+        "value": 175.8150838748816,
+        "unit": "degree",
+        "confidence": 0.95,
+        "source": "alphapose-json"
+      }
+    },
+    {
+      "rule_id": "YMZ-P2-TORSO-001",
+      "rule_name": "第二阶段躯干前倾过大",
+      "status": "pass",
+      "violation": false,
+      "deduction": 0.0,
+      "review_required": false,
+      "evidence": {
+        "frame_range": [
+          0,
+          1
+        ],
+        "phase": "第二阶段",
+        "body_part": "Torso",
+        "metric": "torso_tilt",
+        "value": 0.0,
+        "unit": "degree",
+        "confidence": 0.95,
+        "source": "alphapose-json"
+      }
+    },
+    {
+      "rule_id": "YMZ-P2-STANCE-001",
+      "rule_name": "第二阶段两脚间距不足",
+      "status": "violation",
+      "violation": true,
+      "deduction": 0.5,
+      "review_required": false,
+      "evidence": {
+        "frame_range": [
+          0,
+          1
+        ],
+        "phase": "第二阶段",
+        "body_part": "Feet",
+        "metric": "foot_distance_ratio",
+        "value": 0.4479085665900355,
+        "unit": "body_height_ratio",
+        "confidence": 0.95,
+        "source": "alphapose-json"
+      }
+    },
+    {
+      "rule_id": "YMZ-P2-HAND-001",
+      "rule_name": "第二阶段右手高度不足",
+      "status": "violation",
+      "violation": true,
+      "deduction": 0.5,
+      "review_required": false,
+      "evidence": {
+        "frame_range": [
+          0,
+          1
+        ],
+        "phase": "第二阶段",
+        "body_part": "Right_Wrist",
+        "metric": "wrist_height_ratio",
+        "value": 0.27372190180502165,
+        "unit": "shoulder_height_ratio",
+        "confidence": 0.9,
+        "source": "alphapose-json"
+      }
+    },
+    {
+      "rule_id": "YMZ-P2-HOLD-001",
+      "rule_name": "第二阶段稳定保持时间不足",
+      "status": "violation",
+      "violation": true,
+      "deduction": 0.5,
+      "review_required": false,
+      "evidence": {
+        "frame_range": [
+          0,
+          1
+        ],
+        "phase": "第二阶段",
+        "body_part": "Phase",
+        "metric": "phase_duration",
+        "value": 2,
+        "unit": "frame",
+        "confidence": 1.0,
+        "source": "phase-boundary-cli"
+      }
+    }
+  ]
+}

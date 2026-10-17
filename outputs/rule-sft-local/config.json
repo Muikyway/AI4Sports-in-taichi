@@ -1,0 +1,8 @@
+{
+  "vocab_size": 172,
+  "max_length": 512,
+  "hidden_size": 64,
+  "layers": 2,
+  "heads": 4,
+  "dropout": 0.1
+}

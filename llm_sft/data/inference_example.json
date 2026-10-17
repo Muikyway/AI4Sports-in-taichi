@@ -1,0 +1,10 @@
+{
+  "instruction": "将裁判规则转换为 DSL JSON。只能使用给定的指标、部位和阶段。",
+  "input": {
+    "action": "野马分鬃",
+    "rule_text": "第二阶段右膝屈曲不得超过115度，持续至少5帧。",
+    "available_metrics": ["joint_angle"],
+    "available_body_parts": ["Right_Knee"],
+    "available_phases": ["第二阶段"]
+  }
+}

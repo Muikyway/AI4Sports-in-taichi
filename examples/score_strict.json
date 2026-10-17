@@ -1,0 +1,57 @@
+{
+  "performance_id": "PERF-0001",
+  "rubric": {
+    "id": "taichi-basic-v1",
+    "name": "太极拳基础动作评分规则",
+    "version": "1.0.0",
+    "base_score": 10.0
+  },
+  "mode": "strict",
+  "base_score": 10.0,
+  "total_deduction": 1.5,
+  "final_score": 8.5,
+  "items": [
+    {
+      "rule_id": "TC-HS-002",
+      "rule_name": "第二阶段右膝屈膝不足",
+      "status": "violation",
+      "violation": true,
+      "deduction": 1.0,
+      "review_required": true,
+      "evidence": {
+        "frame_range": [
+          45,
+          52
+        ],
+        "phase": "第二阶段",
+        "body_part": "Right_Knee",
+        "metric": "joint_angle",
+        "value": 118.0,
+        "unit": "degree",
+        "confidence": 0.93,
+        "source": "alphapose-halpe26"
+      }
+    },
+    {
+      "rule_id": "TC-TORSO-001",
+      "rule_name": "第二阶段躯干前倾过大",
+      "status": "violation",
+      "violation": true,
+      "deduction": 0.5,
+      "review_required": false,
+      "evidence": {
+        "frame_range": [
+          45,
+          52
+        ],
+        "phase": "第二阶段",
+        "body_part": "Torso",
+        "metric": "torso_tilt",
+        "value": 24.0,
+        "unit": "degree",
+        "confidence": 0.88,
+        "source": "kinematics-v1"
+      }
+    }
+  ]
+}

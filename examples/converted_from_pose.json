@@ -1,0 +1,85 @@
+{
+  "performance_id": "alphapose_halpe_sample",
+  "action": "野马分鬃",
+  "facts": [
+    {
+      "frame_range": [
+        0,
+        1
+      ],
+      "duration_frames": 2,
+      "phase": "第二阶段",
+      "body_part": "Right_Knee",
+      "metric": "joint_angle",
+      "value": 175.8150838748816,
+      "unit": "degree",
+      "confidence": 0.95,
+      "source": "alphapose-json"
+    },
+    {
+      "frame_range": [
+        0,
+        1
+      ],
+      "duration_frames": 2,
+      "phase": "第二阶段",
+      "body_part": "Torso",
+      "metric": "torso_tilt",
+      "value": 0.0,
+      "unit": "degree",
+      "confidence": 0.95,
+      "source": "alphapose-json"
+    },
+    {
+      "frame_range": [
+        0,
+        1
+      ],
+      "duration_frames": 2,
+      "phase": "第二阶段",
+      "body_part": "Feet",
+      "metric": "foot_distance_ratio",
+      "value": 0.4479085665900355,
+      "unit": "body_height_ratio",
+      "confidence": 0.95,
+      "source": "alphapose-json"
+    },
+    {
+      "frame_range": [
+        0,
+        1
+      ],
+      "duration_frames": 2,
+      "phase": "第二阶段",
+      "body_part": "Right_Wrist",
+      "metric": "wrist_height_ratio",
+      "value": 0.27372190180502165,
+      "unit": "shoulder_height_ratio",
+      "confidence": 0.9,
+      "source": "alphapose-json"
+    },
+    {
+      "frame_range": [
+        0,
+        1
+      ],
+      "duration_frames": 2,
+      "phase": "第二阶段",
+      "body_part": "Phase",
+      "metric": "phase_duration",
+      "value": 2,
+      "unit": "frame",
+      "confidence": 1.0,
+      "source": "phase-boundary-cli"
+    }
+  ],
+  "metadata": {
+    "pose_json": "examples\\alphapose_halpe_sample.json",
+    "frame_count": 2,
+    "phase": "第二阶段",
+    "phase_range": [
+      0,
+      1
+    ]
+  }
+}

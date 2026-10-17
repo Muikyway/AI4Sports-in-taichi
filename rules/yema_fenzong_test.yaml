@@ -1,0 +1,97 @@
+rubric:
+  id: taichi-yema-fenzong-test-v1
+  name: 野马分鬃研究用测试规则
+  version: 1.0.0
+  base_score: 10.0
+  note: 仅用于验证规则执行、证据链和报告生成，不代表正式竞赛规程。
+
+rules:
+  - id: YMZ-P2-KNEE-001
+    name: 第二阶段右膝屈曲不足
+    action: 野马分鬃
+    phase: 第二阶段
+    enabled: true
+    predicate:
+      metric: joint_angle
+      body_part: Right_Knee
+      operator: ">"
+      threshold: 115.0
+      unit: degree
+      tolerance: 8.0
+      uncertainty: 3.0
+      min_confidence: 0.70
+    aggregation: {type: max_probability}
+    penalty: {max_points: 1.0, severity: fixed}
+    evidence: {required: [frame_range, body_part, metric, value, confidence]}
+
+  - id: YMZ-P2-TORSO-001
+    name: 第二阶段躯干前倾过大
+    action: 野马分鬃
+    phase: 第二阶段
+    enabled: true
+    predicate:
+      metric: torso_tilt
+      body_part: Torso
+      operator: ">"
+      threshold: 20.0
+      unit: degree
+      tolerance: 5.0
+      uncertainty: 2.0
+      min_confidence: 0.70
+    aggregation: {type: max_probability}
+    penalty: {max_points: 0.5, severity: fixed}
+    evidence: {required: [frame_range, body_part, metric, value, confidence]}
+
+  - id: YMZ-P2-STANCE-001
+    name: 第二阶段两脚间距不足
+    action: 野马分鬃
+    phase: 第二阶段
+    enabled: true
+    predicate:
+      metric: foot_distance_ratio
+      body_part: Feet
+      operator: "<"
+      threshold: 0.80
+      unit: body_height_ratio
+      tolerance: 0.10
+      uncertainty: 0.05
+      min_confidence: 0.70
+    aggregation: {type: max_probability}
+    penalty: {max_points: 0.5, severity: fixed}
+    evidence: {required: [frame_range, body_part, metric, value, confidence]}
+
+  - id: YMZ-P2-HAND-001
+    name: 第二阶段右手高度不足
+    action: 野马分鬃
+    phase: 第二阶段
+    enabled: true
+    predicate:
+      metric: wrist_height_ratio
+      body_part: Right_Wrist
+      operator: "<"
+      threshold: 0.85
+      unit: shoulder_height_ratio
+      tolerance: 0.10
+      uncertainty: 0.05
+      min_confidence: 0.70
+    aggregation: {type: max_probability}
+    penalty: {max_points: 0.5, severity: fixed}
+    evidence: {required: [frame_range, body_part, metric, value, confidence]}
+
+  - id: YMZ-P2-HOLD-001
+    name: 第二阶段稳定保持时间不足
+    action: 野马分鬃
+    phase: 第二阶段
+    enabled: true
+    predicate:
+      metric: phase_duration
+      body_part: Phase
+      operator: "<"
+      threshold: 20
+      unit: frame
+      tolerance: 3.0
+      uncertainty: 2.0
+      min_confidence: 0.90
+    aggregation: {type: max_probability}
+    penalty: {max_points: 0.5, severity: fixed}
+    evidence: {required: [frame_range, body_part, metric, value, confidence]}

@@ -1,0 +1,50 @@
+rubric:
+  id: taichi-basic-v1
+  name: 太极拳基础动作评分规则
+  version: 1.0.0
+  base_score: 10.0
+
+rules:
+  - id: TC-HS-002
+    name: 第二阶段右膝屈膝不足
+    action: 野马分鬃
+    phase: 第二阶段
+    enabled: true
+    predicate:
+      metric: joint_angle
+      body_part: Right_Knee
+      operator: ">"
+      threshold: 115.0
+      unit: degree
+      tolerance: 8.0
+      uncertainty: 3.0
+      min_confidence: 0.70
+    aggregation:
+      type: max_probability
+    penalty:
+      max_points: 1.0
+      severity: linear
+    evidence:
+      required: [frame_range, body_part, metric, value, confidence]
+
+  - id: TC-TORSO-001
+    name: 第二阶段躯干前倾过大
+    action: 野马分鬃
+    phase: 第二阶段
+    enabled: true
+    predicate:
+      metric: torso_tilt
+      body_part: Torso
+      operator: ">"
+      threshold: 20.0
+      unit: degree
+      tolerance: 5.0
+      uncertainty: 2.0
+      min_confidence: 0.70
+    aggregation:
+      type: max_probability
+    penalty:
+      max_points: 0.5
+      severity: linear
+    evidence:
+      required: [frame_range, body_part, metric, value, confidence]
