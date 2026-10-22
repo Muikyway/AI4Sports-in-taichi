@@ -877,3 +877,24 @@ class ChapterEvalReport(StrictModel):
     total_e_deduction: float = Field(ge=0.0)
     total_d_deduction: float = Field(ge=0.0)
     rule_results: List[RuleEvalResult]
+```
+
+
+
+
+
+
+
+## 9、优势：
+
+#### 1. EMNLP 2024：强制严格 JSON 格式导致推理准确率暴跌 10%～15%
+
+- **论文**：[Let Me Speak Freely? A Study on the Impact of Format Restrictions on Performance of Large Language Models](https://aclanthology.org/2024.emnlp-industry.91/) (Tam et al., 2024)
+- **核心发现**：研究系统评测了模型在自由生成、自然文本与强制 JSON/YAML/XML 输出约束下的表现。实验表明，**当强制 LLM 以严格 JSON 模式输出符号推理、数学逻辑和多步推导任务时，模型准确率普遍出现 10%～15% 的显著退化**。
+- **机理剖析**：自回归 Transformer 依赖前文生成的 Token 作为思维链（Chain of Thought）。强制要求输出 JSON 语法符号（如键名引号、缩进、转义符、嵌套闭合括号）会**强制打断模型的自然推理轨迹，消耗其自注意力头的表征预算去“维持 JSON 语法的合法性”，而非专注于“逻辑真值条件的判断”**。
+
+#### 2. ICML 2024：可执行代码/表达式形态远胜 JSON
+
+- **论文**：[Executable Code Actions Elicit Better LLM Agents (CodeAct)](https://proceedings.mlr.press/v235/wang24h.html) (Wang et al., ICML 2024)
+- **核心发现**：在复杂动作生成、工具调用与多条件决策任务（如 M³ToolEval）中，让模型生成类似 Python 表达式/代码的行为，比生成 JSON 格式的成功率提升了 **15%～20% 以上**。
+- **预训练先验差异**：LLM 在海量预训练数据中接触过数万亿 Token 的代码（C++、Python、数学公式），对**中缀操作符优先级（`>`, `<=`, `AND`, `OR`）与函数调用（`HOLD(...)`）具有极其强大的归纳偏置（Inductive Bias）**；相反，将 `(A > 20) AND (B == true)` 人工拆解为 JSON 字典树的形式在自然代码中极少出现，属于反直觉的“数据分布外（OOD）”生成。
